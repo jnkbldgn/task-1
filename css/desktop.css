@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #fff;
+}
+.container{
+    box-sizing: border-box;
+    padding-top: 43px;
+    max-width: 704px;
+    margin: 0 auto;
+}
+
+.header{
+    max-width: 704px;
+    margin: 0 auto;
+    padding-bottom: 43px;
+}
+.header__logo{
+    width: 100px;
+}
+
+.main > .mainGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 12 - 16px), 1fr));
+    grid-template-rows: repeat(7, auto);
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    grid-auto-flow: row dense;
+    max-width: 704px;
+    margin: 0 auto;
+
+}
+.article__actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    padding: 0 10px;
+}
+.heart{
+    background: url(../icons/heart.png);
+    cursor: pointer;
+    height: 17px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.options{
+    background: url(../icons/actions.png);
+    cursor: pointer;
+    height: 4px;
+    width: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.default{
+    width: 100%;
+}
+/* стили блоков s */
+
+.size-s{
+    display: grid;
+    height: 234px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "title title"
+                         "image image"
+                         "descriptions descriptions"
+                         "channel actions";
+    grid-gap: 8px; 
+    grid-column-end: span 4;
+}
+
+.size-s .article__title{
+    font-size: 17px;
+    max-height: 3.5em;
+}
+
+.size-s .article__image{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.no-descriptions{
+    grid-template-areas: "title title"
+                         "image image"!important;
+}
+.no-image{
+    grid-template-areas: "title title"
+                         "descriptions descriptions"
+                         "channel actions"!important;
+    grid-template-columns: auto 65px;
+    grid-template-rows: auto 1fr 40px;
+}
+
+.no-image .article__actions .heart{
+    order: 1;
+}
+.no-descriptions .article__image{
+    position: relative;
+}
+.no-descriptions .article__actions{
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.no-descriptions .article__actions .heart{
+    order: 1;
+}
+
+/* //стили блоков s */
+
+
+/* стили блоков m */
+
+.size-m{
+    display: grid;
+    height: 305px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr 62px;
+    grid-template-areas: "title title"
+                         "image image"
+                         "descriptions actions";
+    grid-gap: 8px; 
+    grid-column-end: span 6;
+    
+}
+.size-m .article__title{
+    line-height: 23px;
+    overflow: auto;
+}
+
+.size-m .article__image{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.size-m .article__actions{
+    flex-direction: column;
+    height: 100%;
+}
+
+.size-m .article__actions .heart{
+    order: 1;
+}
+
+/* //стили блоков m */
+
+
+/* стили блоков l */
+
+.size-l{
+    display: grid;
+    grid-template-columns: 65% auto;
+    grid-template-rows: 48px auto 27px;
+    grid-template-areas: "image title"
+                         "image descriptions"
+                         "image actions";
+    grid-gap: 8px;
+    grid-column-end: span 12;
+}
+/* //стили блоков l */
+
+
+/* стили блоков статьи */
+.article__actions{
+    grid-area: actions;
+}
+.article__image{
+    grid-area: image;
+}
+.article__title{
+    grid-area: title;
+    overflow: hidden;
+    font-size: 19px;
+}
+.article__description{
+    grid-area: descriptions;
+    overflow: hidden;
+    font-size: 14px;
+    color: #000000;
+    line-height: 20px;
+}
+.article__channel-name{
+    grid-area: channel;
+    line-height: 16px;
+    font-size: 14px;
+    color: #000000;
+}
+/* //стили блоков статьи */

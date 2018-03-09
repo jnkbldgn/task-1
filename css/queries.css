@@ -1,0 +1,113 @@
+@media all and (min-width: 1050px) {
+    .container{ 
+        max-width: 1024px;
+    }
+    .header {
+        max-width: 1024px;
+    }
+    .main > .mainGrid{
+        max-width: 1024px;
+        grid-row-gap: 40px;
+    }
+    .article__title{
+        font-size: 21px!important;
+    }
+    .article__description{
+        font-size: 18px;
+    }
+    .no-image .article__description{
+        line-height: 22px;
+    }
+}
+@media all and (max-width: 720px){
+    .header{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .main{
+        padding: 10px 15px;
+    }
+}
+
+@media all and (max-width: 680px){
+    .no-descriptions .image{
+        width: 100%;
+        height: 100%;
+    }
+    .no-descriptions .image .default{
+        height: 100%;
+    }
+    .size-l{
+        grid-template-columns: 60% auto;
+        grid-template-rows: auto 1fr auto;
+        grid-row-gap: 2px;
+    }
+    .size-l .article__description{
+        max-height: 7.4em;
+    }
+}
+
+@media all and (max-width: 560px){
+    .main{
+        background: rgba(0, 0, 0, .1);
+    }
+    .article{
+        background: #fff;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .no-descriptions .image{
+        width: auto;
+        height: auto;
+    }
+    .size-l{
+
+        grid-template-columns: auto auto;
+        grid-template-rows: auto 1fr 62px;
+        grid-template-areas: 
+        "title title"
+        "image image"
+        "descriptions actions"
+    }
+    .size-l .article__actions{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .size-m {
+        grid-column-end: span 12;
+        height: auto;
+    }
+
+    .size-s {
+        grid-column-end: span 6;
+    }
+    
+    .size-l .article__actions .heart{
+        order: 1;
+    }
+    .no-image .article__title{
+        max-height: 3.5rem;
+    }
+    .no-image .article__description{
+        max-height: 7.5rem;
+    }
+
+    .article__description{
+        font-size: 16px;
+    }
+    .article__title{
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 420px){
+    .size-s {
+        grid-column-end: span 12;
+        height: auto;
+    }
+    .no-image .article__description{
+        max-height: 100%;
+    }
+
+}

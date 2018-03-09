@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Яндекс Дзен</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/desktop.css">
+    <link rel="stylesheet" href="./css/queries.css">
+</head>
+<body>
+    <!-- шаблоны статей -->
+    <template id="article-template-l">
+        <div class="article">
+            <div class="article__image">
+                <picture class="image">
+                    <source srcset=""
+                            class="source"/>
+                    <img src=""
+                         class="default"/>
+                </picture>
+            </div>
+            <div class="article__title YSText-Bold"></div>
+            <div class="article__description YSText-Regular"></div>
+            <div class="article__actions">
+                <div class="options"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="article-template-m">
+        <div class="article">
+            <div class="article__image">
+                <picture class="image">
+                    <source srcset=""
+                            class="source"/>
+                    <img src=""
+                            class="default"/>
+                </picture>
+            </div>
+            <div class="article__title YSText-Bold"></div>
+            <div class="article__description YSText-Regular"></div>
+            <div class="article__actions">
+                <div class="options"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="article-template-no-image">
+        <div class="article no-image">
+            <div class="article__title YSText-Bold"></div>
+            <div class="article__description YSText-Regular"></div>
+            <div class="article__channel-name YSText-Bold"></div>
+            <div class="article__actions">
+                <div class="options"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="article-template-no-description">
+        <div class="article no-descriptions">
+            <div class="article__title YSText-Bold"></div>
+            <div class="article__image">
+                <picture class="image">
+                    <source srcset=""
+                            class="source"/>
+                    <img src=""
+                            class="default"/>
+                </picture>
+                <div class="article__actions">
+                    <div class="heart"></div>
+                    <div class="options"></div>
+                </div>
+            </div>
+        </div>
+    </template>     
+    <!-- / шаблоны статей  -->
+
+    <div class="container">
+        <header class="header">
+            <picture>
+                <source srcset="img/zen_logo@2x.png, 
+                                img/zen_logo@3x.png 2x"/>
+                <img src="img/zen_logo@.png"
+                     class="header__logo"
+                     alt="Яндекс Дзен" />
+            </picture>
+        </header>
+        <main class="main">
+        </main>
+    </div> 
+
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+
+
+
+</body>
+</html>
