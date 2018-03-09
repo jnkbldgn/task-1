@@ -14,12 +14,9 @@
     <template id="article-template-l">
         <div class="article">
             <div class="article__image">
-                <picture class="image">
-                    <source srcset=""
-                            class="source"/>
-                    <img src=""
-                         class="default"/>
-                </picture>
+                <img src=""
+                    sizes = "65vw"
+                     class="image"/>
             </div>
             <div class="article__title YSText-Bold"></div>
             <div class="article__description YSText-Regular"></div>
@@ -33,12 +30,9 @@
     <template id="article-template-m">
         <div class="article">
             <div class="article__image">
-                <picture class="image">
-                    <source srcset=""
-                            class="source"/>
                     <img src=""
-                            class="default"/>
-                </picture>
+                         class="image"
+                         sizes="50vw"/>
             </div>
             <div class="article__title YSText-Bold"></div>
             <div class="article__description YSText-Regular"></div>
@@ -65,12 +59,9 @@
         <div class="article no-descriptions">
             <div class="article__title YSText-Bold"></div>
             <div class="article__image">
-                <picture class="image">
-                    <source srcset=""
-                            class="source"/>
                     <img src=""
-                            class="default"/>
-                </picture>
+                         class="image"
+                         size="33vw"/>
                 <div class="article__actions">
                     <div class="heart"></div>
                     <div class="options"></div>
@@ -82,13 +73,12 @@
 
     <div class="container">
         <header class="header">
-            <picture>
-                <source srcset="img/zen_logo@2x.png, 
-                                img/zen_logo@3x.png 2x"/>
-                <img src="img/zen_logo@.png"
-                     class="header__logo"
-                     alt="Яндекс Дзен" />
-            </picture>
+            <img src="img/zen_logo@.png"
+                    srcset="img/zen_logo.png 45w,
+                            img/zen_logo@2x.png 90w, 
+                            img/zen_logo@3x.png 134w"
+                    class="header__logo"
+                    alt="Яндекс Дзен" />
         </header>
         <main class="main">
         </main>

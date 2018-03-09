@@ -9,11 +9,13 @@ body{
     box-sizing: border-box;
     padding-top: 43px;
     max-width: 704px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
 .header{
     max-width: 704px;
+    max-width: 1024px;
     margin: 0 auto;
     padding-bottom: 43px;
 }
@@ -26,9 +28,9 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(calc(100% / 12 - 16px), 1fr));
     grid-template-rows: repeat(7, auto);
     grid-column-gap: 16px;
-    grid-row-gap: 30px;
+    grid-row-gap: 40px;
     grid-auto-flow: row dense;
-    max-width: 704px;
+    max-width: 1024px;
     margin: 0 auto;
 
 }
@@ -58,7 +60,7 @@ body{
     background-position: center;
     background-size: contain;
 }
-.default{
+.image{
     width: 100%;
 }
 /* стили блоков s */
@@ -112,7 +114,7 @@ body{
     box-sizing: border-box;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 0;  
 }
 .no-descriptions .article__actions .heart{
     order: 1;
@@ -184,14 +186,17 @@ body{
 .article__title{
     grid-area: title;
     overflow: hidden;
-    font-size: 19px;
+    font-size: 21px;
+    text-overflow: ellipsis;
 }
 .article__description{
     grid-area: descriptions;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 18px;
+    max-height: 10rem;
     color: #000000;
     line-height: 20px;
+    text-overflow: ellipsis;
 }
 .article__channel-name{
     grid-area: channel;

@@ -28,8 +28,7 @@
         }
 
         const MAIN_SELECTOR = ".article";
-        const IMG_SOURCE = ".source";
-        const IMG_DEFAULT = ".default";
+        const IMAGE_SELECTOR = ".image";
         const TITLE_SELECTOR = ".article__title";
         const DESCRIPTION_SELECTOR = ".article__description";
         const CHANNEL_NAME_SELECTOR = ".article__channel-name";
@@ -52,10 +51,9 @@
                 titleElem.style.color = item.titleColor || "#000";
             }
             if(item.image){
-                let imageElem = cloneTemplate.content.querySelectorAll(IMG_DEFAULT)[0];
-                let imageSource = cloneTemplate.content.querySelectorAll(IMG_SOURCE)[0];
+                let imageElem = cloneTemplate.content.querySelectorAll(IMAGE_SELECTOR)[0];
                 imageElem.setAttribute("src", item.image);
-                imageSource.setAttribute("srcset", item.imageSrcset);
+                imageElem.setAttribute("srcset", item.imageSrcset);
             }
             if(item.description){
                 let descriptionElem = cloneTemplate.content.querySelectorAll(DESCRIPTION_SELECTOR)[0];
@@ -73,11 +71,30 @@
     function createSrcset(data){
         let imageTwoName = "@2x.";
         let imageThreeName = "@3x.";
-        let density = " 2x";
+        let srcSetWidth = {
+            "s": {
+                default: " 112w",
+                "@2x.":" 224w",
+                "@3x.":" 336w"
+                },
+            "m": {
+                default: " 172w",
+                "@2x.":" 344w",
+                "@3x.":" 516w"
+                },
+            "l": {
+                default: " 242w",
+                "@2x.":" 464w",
+                "@3x.":" 696w"
+                }
+        };
         data && data.length && data.forEach(item => {
             if(!!item.image){
                 let partsName = item.image.split(".");
-                let srcSet = [partsName[0] + imageTwoName + partsName[1], partsName[0] + imageThreeName + partsName[1] + density];
+                let srcSet = [  item.image + srcSetWidth[item.size].default,
+                                partsName[0] + imageTwoName + partsName[1] + srcSetWidth[item.size][imageTwoName], 
+                                partsName[0] + imageThreeName + partsName[1] + srcSetWidth[item.size][imageThreeName]
+                            ];
                 item.imageSrcset = srcSet.join(", ");
             }  
         });
