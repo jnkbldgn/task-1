@@ -110,6 +110,7 @@
     }
     .no-image .article__description{
         max-height: 10rem;
+        line-height: 23px;
     }
 
 }
