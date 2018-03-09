@@ -71,29 +71,12 @@
     function createSrcset(data){
         let imageTwoName = "@2x.";
         let imageThreeName = "@3x.";
-        let srcSetWidth = {
-            "s": {
-                default: " 112w",
-                "@2x.":" 224w",
-                "@3x.":" 336w"
-                },
-            "m": {
-                default: " 172w",
-                "@2x.":" 344w",
-                "@3x.":" 516w"
-                },
-            "l": {
-                default: " 242w",
-                "@2x.":" 464w",
-                "@3x.":" 696w"
-                }
-        };
+    
         data && data.length && data.forEach(item => {
             if(!!item.image){
                 let partsName = item.image.split(".");
-                let srcSet = [  item.image + srcSetWidth[item.size].default,
-                                partsName[0] + imageTwoName + partsName[1] + srcSetWidth[item.size][imageTwoName], 
-                                partsName[0] + imageThreeName + partsName[1] + srcSetWidth[item.size][imageThreeName]
+                let srcSet = [  partsName[0] + imageTwoName + partsName[1] + " 1x", 
+                                partsName[0] + imageThreeName + partsName[1] + " 2x"
                             ];
                 item.imageSrcset = srcSet.join(", ");
             }  
