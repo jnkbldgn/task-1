@@ -52,8 +52,8 @@
             }
             if(item.image){
                 let imageElem = cloneTemplate.content.querySelectorAll(IMAGE_SELECTOR)[0];
-                imageElem.setAttribute("src", item.image);
                 imageElem.setAttribute("srcset", item.imageSrcset);
+                imageElem.setAttribute("src", item.image);
             }
             if(item.description){
                 let descriptionElem = cloneTemplate.content.querySelectorAll(DESCRIPTION_SELECTOR)[0];
@@ -75,8 +75,8 @@
         data && data.length && data.forEach(item => {
             if(!!item.image){
                 let partsName = item.image.split(".");
-                let srcSet = [  partsName[0] + imageTwoName + partsName[1] + " 1x", 
-                                partsName[0] + imageThreeName + partsName[1] + " 2x"
+                let srcSet = [  partsName[0] + imageTwoName + partsName[1] + " 2x", 
+                                partsName[0] + imageThreeName + partsName[1] + " 3x"
                             ];
                 item.imageSrcset = srcSet.join(", ");
             }  
