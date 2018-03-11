@@ -6,7 +6,8 @@ body{
     background: #fff;
 }
 .container{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding-top: 43px;
     max-width: 704px;
     max-width: 1024px;
@@ -24,9 +25,12 @@ body{
 }
 
 .main > .mainGrid{
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 12 - 16px), 1fr));
-    grid-template-rows: repeat(7, auto);
+    -ms-grid-columns: (minmax(calc(100% / 12 - 16px), 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 12 - 16px), 1fr));
+    -ms-grid-rows: (auto)[7];
+        grid-template-rows: repeat(7, auto);
     grid-column-gap: 16px;
     grid-row-gap: 40px;
     grid-auto-flow: row dense;
@@ -35,10 +39,19 @@ body{
 
 }
 .article__actions{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 25px;
     padding: 0 10px;
 }
@@ -66,16 +79,20 @@ body{
 /* стили блоков s */
 
 .size-s{
+    display: -ms-grid;
     display: grid;
     height: 310px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "title title"
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "title title"
                          "image image"
                          "descriptions descriptions"
                          "channel actions";
     grid-gap: 8px; 
-    grid-column-end: span 4;
+    -ms-grid-column-span: 4; 
+        grid-column-end: span 4;
 }
 
 .size-s .article__title{
@@ -94,34 +111,44 @@ body{
     bottom: 0;
 }
 .no-descriptions{
-    grid-template-areas: "title title"
+        grid-template-areas: "title title"
                          "image image"!important;
 }
 .no-image{
-    grid-template-areas: "title title"
+        grid-template-areas: "title title"
                          "descriptions descriptions"
                          "channel actions"!important;
-    grid-template-columns: auto 65px;
-    grid-template-rows: auto 1fr 40px;
+    -ms-grid-columns: auto 65px;
+        grid-template-columns: auto 65px;
+    -ms-grid-rows: auto 1fr 40px;
+        grid-template-rows: auto 1fr 40px;
 }
 
 .no-image .article__actions .heart{
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
 }
 .no-descriptions .article__image{
     position: relative;
 }
 .no-descriptions .article__actions{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
     padding: 10px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     position: absolute;
     right: 0;
     top: 0;  
 }
 .no-descriptions .article__actions .heart{
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
 }
 
 /* //стили блоков s */
@@ -130,15 +157,19 @@ body{
 /* стили блоков m */
 
 .size-m{
+    display: -ms-grid;
     display: grid;
     height: 365px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto 1fr 62px;
-    grid-template-areas: "title title"
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto 1fr 62px;
+        grid-template-rows: auto 1fr 62px;
+        grid-template-areas: "title title"
                          "image image"
                          "descriptions actions";
     grid-gap: 8px; 
-    grid-column-end: span 6;
+    -ms-grid-column-span: 6; 
+        grid-column-end: span 6;
     
 }
 .size-m .article__title{
@@ -159,12 +190,17 @@ body{
 }
 
 .size-m .article__actions{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
 }
 
 .size-m .article__actions .heart{
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
 }
 
 /* //стили блоков m */
@@ -173,41 +209,58 @@ body{
 /* стили блоков l */
 
 .size-l{
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 65% auto;
-    grid-template-rows: 48px auto 27px;
-    grid-template-areas: "image title"
+    -ms-grid-columns: 65% auto;
+        grid-template-columns: 65% auto;
+    -ms-grid-rows: 48px auto 27px;
+        grid-template-rows: 48px auto 27px;
+        grid-template-areas: "image title"
                          "image descriptions"
                          "image actions";
     grid-gap: 8px;
-    grid-column-end: span 12;
+    -ms-grid-column-span: 12;
+        grid-column-end: span 12;
 }
 /* //стили блоков l */
 
 
 /* стили блоков статьи */
 .article__actions{
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
     grid-area: actions;
 }
 .article__image{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
     grid-area: image;
 }
 .article__title{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: title;
     overflow: hidden;
     font-size: 21px;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .article__description{
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
     grid-area: descriptions;
     overflow: hidden;
     font-size: 18px;
-    max-height: 10rem;
+    max-height: 13.5rem;
     color: #000000;
     line-height: 20px;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .article__channel-name{
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
     grid-area: channel;
     line-height: 16px;
     font-size: 14px;

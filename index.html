@@ -14,8 +14,11 @@
     <template id="article-template-l">
         <div class="article">
             <div class="article__image">
-                <img src=""
-                     class="image"/>
+                <picture class="picture">
+                    <source class="min"  media="(min-width: 320px)" srcset="">
+                    <source class="max"  media="(min-width: 600px)" srcset="">
+                    <img src="" alt="picture" class="image">
+                </picture>
             </div>
             <div class="article__title YSText-Bold"></div>
             <div class="article__description YSText-Regular"></div>
@@ -29,8 +32,11 @@
     <template id="article-template-m">
         <div class="article">
             <div class="article__image">
-                    <img src=""
-                         class="image"/>
+                <picture class="picture">
+                    <source class="min"  media="(min-width: 320px)" srcset="">
+                    <source class="max"  media="(min-width: 600px)" srcset="">
+                    <img src="" alt="picture" class="image">
+                </picture>
             </div>
             <div class="article__title YSText-Bold"></div>
             <div class="article__description YSText-Regular"></div>
@@ -57,8 +63,11 @@
         <div class="article no-descriptions">
             <div class="article__title YSText-Bold"></div>
             <div class="article__image">
-                    <img src=""
-                         class="image"/>
+                    <picture class="picture">
+                        <source class="min"  media="(min-width: 320px)" srcset="">
+                        <source class="max"  media="(min-width: 600px)" srcset="">
+                        <img src="" alt="picture" class="image">
+                    </picture>
                 <div class="article__actions">
                     <div class="heart"></div>
                     <div class="options"></div>
@@ -70,11 +79,11 @@
 
     <div class="container">
         <header class="header">
-            <img src="img/zen_logo@.png"
-                    srcset="img/zen_logo@2x.png 1x, 
-                            img/zen_logo@3x.png 2x"
-                    class="header__logo"
-                    alt="Яндекс Дзен" />
+            <picture>
+                <source  media="(min-width: 320px)" srcset="img/zen_logo@2x.png">
+                <source  media="(min-width: 600px)" srcset="img/zen_logo@3x.png">
+                <img src="img/zen_logo.png" alt="Яндекс Дзен" class="header__logo">
+            </picture>
         </header>
         <main class="main">
         </main>

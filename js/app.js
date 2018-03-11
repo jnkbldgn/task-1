@@ -28,7 +28,7 @@
         }
 
         const MAIN_SELECTOR = ".article";
-        const IMAGE_SELECTOR = ".image";
+        const PICTURE_SELECTOR = ".picture";
         const TITLE_SELECTOR = ".article__title";
         const DESCRIPTION_SELECTOR = ".article__description";
         const CHANNEL_NAME_SELECTOR = ".article__channel-name";
@@ -51,9 +51,13 @@
                 titleElem.style.color = item.titleColor || "#000";
             }
             if(item.image){
-                let imageElem = cloneTemplate.content.querySelectorAll(IMAGE_SELECTOR)[0];
-                imageElem.setAttribute("srcset", item.imageSrcset);
-                imageElem.setAttribute("src", item.image);
+                let pictureElem = cloneTemplate.content.querySelectorAll(PICTURE_SELECTOR)[0];
+                let max = pictureElem.querySelector('.max');
+                let min = pictureElem.querySelector('.min');
+                let image = pictureElem.querySelector('.image');
+                max.setAttribute("srcset", item.imageSrcset[1] || item.image);
+                min.setAttribute("srcset", item.imageSrcset[0] || item.image);
+                image.setAttribute("src", item.image);
             }
             if(item.description){
                 let descriptionElem = cloneTemplate.content.querySelectorAll(DESCRIPTION_SELECTOR)[0];
@@ -75,10 +79,10 @@
         data && data.length && data.forEach(item => {
             if(!!item.image){
                 let partsName = item.image.split(".");
-                let srcSet = [  partsName[0] + imageTwoName + partsName[1] + " 2x", 
-                                partsName[0] + imageThreeName + partsName[1] + " 3x"
+                let srcSet = [  partsName[0] + imageTwoName + partsName[1] , 
+                                partsName[0] + imageThreeName + partsName[1]
                             ];
-                item.imageSrcset = srcSet.join(", ");
+                item.imageSrcset = srcSet;
             }  
         });
         return data;
