@@ -27,9 +27,9 @@ body{
 .main > .mainGrid{
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(calc(100% / 12 - 16px), 1fr))[auto-fill];
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(auto-fill, minmax(calc(100% / 12 - 16px), 1fr));
-    -ms-grid-rows: (auto)[7];
+    -ms-grid-rows: auto auto auto auto auto auto auto;
         grid-template-rows: repeat(7, auto);
     grid-column-gap: 16px;
     grid-row-gap: 40px;
