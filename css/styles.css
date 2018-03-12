@@ -96,7 +96,7 @@ body{
 }
 
 .size-s .article__title{
-    font-size: 17px;
+    font-size: 21px;
     max-height: 3.5em;
 }
 
@@ -252,7 +252,7 @@ body{
     grid-area: descriptions;
     overflow: hidden;
     font-size: 18px;
-    max-height: 13.5rem;
+    max-height: 13.6rem;
     color: #000000;
     line-height: 20px;
     -o-text-overflow: ellipsis;
